@@ -75,9 +75,7 @@ const clampNumber = (value, min = 0) =>
 function BrandMark({ dark = false, compact = false }) {
   const source = dark
     ? "/LOGO%20PARA%20FONDOS%20CLAROS.png"
-    : compact
-      ? "/LOGOTIPO%20BLANCO.png"
-      : "/partum-logo-dark.png";
+    : "/LOGOTIPO%20BLANCO.png";
 
   return (
     <div className={`brand ${dark ? "brand--paper" : ""} ${compact ? "brand--compact" : ""}`}>

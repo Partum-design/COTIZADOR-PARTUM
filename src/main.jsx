@@ -37,7 +37,6 @@ const bankDetails = {
   bank: "Santander",
   holder: "Erick Rocha Colín",
   clabe: "014180655117479759",
-  note: "Enviar comprobante de pago al correo o WhatsApp de contacto para confirmar la programación del proyecto.",
 };
 
 const initialQuote = {
@@ -1040,8 +1039,6 @@ function App() {
                   <span>{groupDigits(bankDetails.clabe, 3)}</span>
                 </div>
               </div>
-
-              {bankDetails.note && <p className="bank-sheet__note">{bankDetails.note}</p>}
             </section>
 
             <footer className="paper-footer">

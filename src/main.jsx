@@ -14,6 +14,7 @@ import {
   Download,
   FileText,
   ImagePlus,
+  Landmark,
   LoaderCircle,
   Mic,
   MicOff,
@@ -31,6 +32,13 @@ import {
 import "./styles.css";
 
 const STORAGE_KEY = "partum-cotizador-v1";
+
+const bankDetails = {
+  bank: "Santander",
+  holder: "Erick Rocha Colín",
+  clabe: "014180655117479759",
+  note: "Enviar comprobante de pago al correo o WhatsApp de contacto para confirmar la programación del proyecto.",
+};
 
 const initialQuote = {
   issuer: "PARTUM Design",
@@ -51,6 +59,12 @@ const initialQuote = {
   logo: "",
   items: [],
 };
+
+const groupDigits = (value, size = 4) =>
+  String(value || "")
+    .replace(/\D/g, "")
+    .replace(new RegExp(`(\\d{${size}})(?=\\d)`, "g"), "$1 ")
+    .trim();
 
 const money = (value, currency = "MXN") =>
   new Intl.NumberFormat("es-MX", {
@@ -1005,6 +1019,29 @@ function App() {
                   <small>{quote.currency} · Impuestos incluidos</small>
                 </div>
               </div>
+            </section>
+
+            <section className="bank-sheet">
+              <header className="bank-sheet__head">
+                <span className="bank-sheet__label">
+                  <Landmark size={11} strokeWidth={2.2} />
+                  Datos bancarios
+                </span>
+                <span className="bank-sheet__bank">{bankDetails.bank}</span>
+              </header>
+
+              <div className="bank-sheet__body">
+                <div className="bank-sheet__holder">
+                  <small>Titular de la cuenta</small>
+                  <strong>{bankDetails.holder}</strong>
+                </div>
+                <div className="bank-number">
+                  <small>CLABE interbancaria</small>
+                  <span>{groupDigits(bankDetails.clabe, 3)}</span>
+                </div>
+              </div>
+
+              {bankDetails.note && <p className="bank-sheet__note">{bankDetails.note}</p>}
             </section>
 
             <footer className="paper-footer">

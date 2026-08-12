@@ -1251,9 +1251,9 @@ select:focus-visible {
 }
 
 .service-card__deliverable {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .summary-sheet {

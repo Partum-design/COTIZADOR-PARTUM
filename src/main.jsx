@@ -963,7 +963,7 @@ function App() {
                       <div className="service-card__main">
                         <div>
                           <h3>{item.name || "Servicio sin nombre"}</h3>
-                          <p>{item.description || "Alcance por definir."}</p>
+                          <p className="multiline-text">{item.description || "Alcance por definir."}</p>
                         </div>
                         <strong>{money(item.price * item.quantity, quote.currency)}</strong>
                       </div>
@@ -994,8 +994,8 @@ function App() {
             <section className="summary-sheet">
               <div className="terms-card">
                 <span>Condiciones comerciales</span>
-                <strong>{quote.paymentTerms || "Condiciones por definir."}</strong>
-                <p>{quote.notes || "Sin notas adicionales."}</p>
+                <strong className="multiline-text">{quote.paymentTerms || "Condiciones por definir."}</strong>
+                <p className="multiline-text">{quote.notes || "Sin notas adicionales."}</p>
               </div>
               <div className="totals-card">
                 <div>

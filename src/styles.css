@@ -1207,6 +1207,12 @@ select:focus-visible {
   line-height: 1.35;
 }
 
+/* Respeta los saltos de línea capturados en las cajas de texto. */
+.multiline-text {
+  white-space: pre-line;
+  overflow-wrap: break-word;
+}
+
 .service-card__main p {
   max-width: 450px;
   margin: 0;
